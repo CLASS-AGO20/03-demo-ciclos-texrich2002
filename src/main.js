@@ -9,15 +9,17 @@ export default class App {
     }
 
     contarImparesFor(inicio, fin){
-        let i,t,suma=0;
+        let i,t,suma=1;
+        
         if(inicio > fin){
             t = inicio;
             inicio = fin;
             fin = t;
         }
+
         for(i=inicio; i<=fin; i++){
-            if(i % 2 != 0){
-            suma += i;
+            if(i % 2 !== 0){
+            suma ++;
             }    
         }
         console.log("La suma de los impares es: ");
@@ -37,21 +39,18 @@ export default class App {
         return suma;
     }
     contarImparesWhile(inicio, fin){
-        let t,i=inicio,suma=0;
-        if(inicio > fin){
-            t = inicio;
-            inicio = fin;
-            fin = t;
-        }
+        let i = inicio;
+        let impares=0;
+       
         while(i <= fin){
-            if(i % 2 !=0){
-                suma += i;
+            if(i % 2 !== 0){
+                impares++; 
             }
             i++;
-        }
-        console.log("La suma de los impares es: ");
-        return suma;
+       }
+       return impares;
     }
+
     sumarParesDo(){
         let i=1,suma=0;
         do{
@@ -61,6 +60,23 @@ export default class App {
             i++;
         }while(i <= 20);
         console.log("La suma de los pares es: ");
+        return suma;
+    }
+    contarImparesDo(inicio, fin){
+        if(inicio > fin){
+            let t = inicio;
+            inicio = fin;
+            fin = t;
+        }
+        let i = inicio;
+        let suma = 0;
+        do{
+            if(i % 2 !== 0){
+                suma ++;
+            }
+            i++;
+        }while(i <= fin);
+        console.log("La suma de los impares es: ");
         return suma;
     }
 
@@ -82,3 +98,5 @@ console.log("");
 console.log("Funcion sumar los pares de 1-20 con do while:");
 console.log(app.sumarParesDo());
 console.log("");
+console.log("Funcion sumar los impares de un rango con do while:");
+console.log(app.contarImparesDo(1,20));
