@@ -26,9 +26,25 @@ export default class App {
         return suma;
         }
 
+    sumarParesWhile(){
+        let i=1,suma=0;
+
+        while(i <= 20){
+            if(i % 2 ==0){
+                suma += i;
+            }
+            i++;
+        }
+        return suma;
+    }
+
 }
 let app = new App();
 console.log("Funcion sumar los pares de 1-20:");
 console.log(app.sumarParesFor());
+console.log("");
 console.log("Funcion sumar los impares de un rango:");
 console.log(app.contarImparesFor(1,20));
+console.log("");
+console.log("Funcion sumar los pares de 1-20 con while:");
+console.log(app.sumarParesWhile());
