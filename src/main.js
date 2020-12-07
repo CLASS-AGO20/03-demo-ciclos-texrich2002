@@ -8,11 +8,25 @@ sumarParesFor(){
     console.log("La suma de los pares es: ");
     return suma;
 }
-contarImparesFor(){
-
+contarImparesFor(inicio,fin){
+    let i,t,suma=0;
+    if(inicio > fin){
+        t = inicio;
+        fin = inicio;
+        inicio = t;
+    }
+    for(i=inicio; i<=fin; i++){
+    if(i % 2 != 0){
+        console.log(i);
+        suma += i;
+    }    
+    }
+    console.log("La suma de los impares es: ");
+    return suma;
 }
 }
 let app = new App();
-console.log("Funcion sumar los pares de 1-20");
+console.log("Funcion sumar los pares de 1-20:");
 console.log(app.sumarParesFor());
-
+console.log("Funcion sumar los impares de un rango:");
+console.log(app.contarImparesFor(1,20));
