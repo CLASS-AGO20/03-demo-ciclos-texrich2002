@@ -37,6 +37,20 @@ export default class App {
         }
         return suma;
     }
+    contarImparesWhile(inicio, fin){
+        let t,i=inicio;
+        if(inicio > fin){
+            t = inicio;
+            inicio = fin;
+            fin = t;
+        }
+        while(i <= fin){
+            if(i % 2 !=0){
+                suma += i;
+            }
+            i++;
+        }
+    }
 
 }
 let app = new App();
@@ -48,3 +62,5 @@ console.log(app.contarImparesFor(1,20));
 console.log("");
 console.log("Funcion sumar los pares de 1-20 con while:");
 console.log(app.sumarParesWhile());
+console.log("Funcion sumar los impares de de un rango con while:");
+console.log(app.contarImparesWhile(1,20));
